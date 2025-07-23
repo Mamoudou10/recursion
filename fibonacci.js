@@ -17,14 +17,17 @@ console.log(fibs(8));
 
 // Recursive version
 function fibsRec(n) {
-    if (n <= 0) return [];
-    if (n === 1) return [0];
-    if (n === 2) return [0, 1];
-  
-    const prev = fibsRec(n - 1); // Get the first (n - 1) Fibonacci numbers
-    const nextNumber = prev[prev.length - 1] + prev[prev.length - 2]; // Add the last two
-    return [...prev, nextNumber];
-  }
+  console.log("This was printed recursively"); // To visualize recursion
+
+  if (n <= 0) return [];
+  if (n === 1) return [0];
+  if (n === 2) return [0, 1];
+
+  const prev = fibsRec(n - 1); // Recursive call
+  const nextNumber = prev[prev.length - 1] + prev[prev.length - 2];
+  return [...prev, nextNumber];
+}
+
   
   // Test both versions
   console.log("Iterative:");
